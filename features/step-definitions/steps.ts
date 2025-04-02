@@ -24,7 +24,7 @@ When(/^I search for (.*)$/, async (query) => {
     await GooglePage.search(query);
 });
 
-Given('I navigate to {string}', async(s: string) => {
+Given('I navigate to {s}', async(s: string) => {
   await page.open(s)
 })
 

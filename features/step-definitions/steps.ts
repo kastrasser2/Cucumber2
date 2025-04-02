@@ -8,9 +8,10 @@ const page: Page = new Page();
 
 
 
-Then(/^I should see a result for (.*)$/, async (result) => {
-     const results = await GooglePage.results
-     expect(results).to.contain(result);
+Then(/^I should see a result for (.*)$/, async(result) => {
+     const results = GooglePage.results;
+     const text = await results.getText();
+     await expect(text).to.contain(result);
 });
 
 
@@ -21,7 +22,6 @@ When(/^I search for (.*)$/, async (query) => {
 
 Given('I navigate to {string}', async(s: string) => {
   await page.open(s)
-  await browser.pause(2000000);
 })
 
 

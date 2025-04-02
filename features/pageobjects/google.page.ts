@@ -7,19 +7,15 @@ import Page from './page.js';
     }
 
     get staySignedOutButton() {
-        return $('button=Stay signed out');
+        return $('button');
     }
 
     get results() {
-        return $('h3');
+        return $$('h3')[0];
     }
 
     public async search(query: string) {
-        await this.staySignedOutButton.waitForDisplayed();
-        await this.staySignedOutButton.click();
-        await this.searchInput.waitForClickable();
-        await this.searchInput.click();
-        await this.searchInput.setValue(query);
+         await this.searchInput.setValue(query);
         await browser.keys('Enter');
     }
 }

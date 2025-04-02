@@ -3,11 +3,11 @@ import Page from './page.js';
 
  class GooglePage extends Page {
     get searchInput() {
-        return $('#APjFqb');
+        return $('#input');
     }
 
-    open() {
-        return super.open('www.google.com')
+    get results() {
+        return $('[h3]');
     }
 
     public async search(query: string) {

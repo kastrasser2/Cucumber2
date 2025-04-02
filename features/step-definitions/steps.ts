@@ -26,7 +26,7 @@ When(/^I search for (.*)$/, async (query) => {
 
 Given('I navigate to {s}', async(s: string) => {
   await page.open(s)
-})
+}); 
 
 
 

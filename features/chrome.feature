@@ -9,6 +9,7 @@ Feature: Google
     Scenario: Navigate to Google
         Given I navigate to "https://www.google.com"
         Then I should see the Google page
+    
 
     
 

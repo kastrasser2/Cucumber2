@@ -6,6 +6,10 @@ import Page from './page.js';
         return $('textarea');
     }
 
+    get header() {
+        return $('img');
+    }
+
     get staySignedOutButton() {
         return $('button');
     }

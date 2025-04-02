@@ -9,7 +9,7 @@ const page: Page = new Page();
 
 
 
-Then(/^I should see a result for (.*)$/, async(result) => {
+Then(/^I should see a result for (.*)$/, async(result: string) => {
      const results = GooglePage.results;
      const text = await results.getText();
      await expect(text).to.contain(result);
@@ -20,11 +20,11 @@ Then(/^I should see the Google page$/, async() => {
     await expect(altAttribute).to.equal('Google');
 })
 
-When(/^I search for (.*)$/, async (query) => {
+When(/^I search for (.*)$/, async (query: string) => {
     await GooglePage.search(query);
 });
 
-Given('I navigate to {s}', async(s: string) => {
+Given(/^I navigate to (.*)$/, async(s: string) => {
   await page.open(s)
 }); 
 

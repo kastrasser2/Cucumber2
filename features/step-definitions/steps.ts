@@ -2,12 +2,6 @@ import { Given, When, Then } from '@wdio/cucumber-framework';
 import {expect} from 'chai';
 
 import GooglePage  from '../pageobjects/google.page.js';
-import Page from '../pageobjects/page.js';
-
-
-const page: Page = new Page(); 
-
-
 
 Then(/^I should see a result for (.*)$/, async(result: string) => {
      const results = GooglePage.results;
@@ -25,7 +19,7 @@ When(/^I search for (.*)$/, async (query: string) => {
 });
 
 Given(/^I navigate to (.*)$/, async(s: string) => {
-  await page.open(s)
+  await GooglePage.open(s)
 }); 
 
 
